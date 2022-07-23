@@ -9,11 +9,8 @@ jobs:
   build-frontend:
     <<: *defaults
     steps:
-      - checkout:
-      - restore_cache:
-          keys: [frontend-build]
+      - checkout
       - run:
-          name: Build front-end
           command: |
             cd frontend
             npm install
