@@ -9,7 +9,7 @@ jobs:
   build-frontend:
     <<: *defaults
     steps:
-      - checkout:
+      - checkout
       - restore_cache:
           keys: [frontend-build]
       - run:
