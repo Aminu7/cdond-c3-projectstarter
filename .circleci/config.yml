@@ -43,9 +43,9 @@ jobs:
     steps:
       - checkout
       - run:
-          name: run back-end test
+          name: run front-end test
           command: |
-            cd backend
+            cd frontend
             npm install
             npm run test
 
