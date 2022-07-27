@@ -39,6 +39,7 @@ commands:
                 npm install
                 npm run migrations:revert
             fi
+
   awscli:
     description: Install AWS CLI v2
     steps:
@@ -48,6 +49,7 @@ commands:
             curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
             unzip awscliv2.zip
             sudo ./aws/install
+
   ansible:
     description: Install Ansible
     steps:
@@ -58,6 +60,7 @@ commands:
             sudo apt install software-properties-common -y
             sudo add-apt-repository --yes --update ppa:ansible/ansible
             sudo apt install ansible -y
+            
   nodejs:
     description: Install Node.js 13
     steps:
@@ -240,7 +243,7 @@ jobs:
   
   run-migrations:
     docker:
-      - image: cimg/node:13.8.0
+      - image: cimg/python:3.10
     steps:
       - checkout
       - awscli
