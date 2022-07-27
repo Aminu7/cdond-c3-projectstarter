@@ -74,6 +74,11 @@ commands:
             sudo npm install --global n
             sudo n 13.8.0
 
+  restore-backend-cache:
+    steps:
+      - restore_cache:
+          keys: [backend-build]
+
 jobs:
   build-frontend:
     <<: *defaults
@@ -247,8 +252,7 @@ jobs:
     steps:
       - checkout
       - awscli
-      - restore_cache:
-          keys: [backend-build]
+      - restore-backend-cache
       - run:
           name: Run migrations
           command: |
