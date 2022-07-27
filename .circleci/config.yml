@@ -252,6 +252,7 @@ jobs:
     steps:
       - checkout
       - awscli
+      - nodejs
       - restore_cache:
           keys: [backend-scan]
       - run:
