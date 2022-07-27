@@ -252,7 +252,8 @@ jobs:
     steps:
       - checkout
       - awscli
-      - restore-backend-cache
+      - restore_cache:
+          keys: [backend-scan]
       - run:
           name: Run migrations
           command: |
