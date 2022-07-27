@@ -255,6 +255,8 @@ jobs:
       - nodejs
       - restore_cache:
           keys: [backend-scan]
+      - attach_workspace:
+          at: ~/
       - run:
           name: Run migrations
           command: |
